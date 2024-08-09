@@ -1,0 +1,29 @@
+DELAY 5000
+REM Open Terminal
+COMMAND SPACE
+DELAY 500
+STRING terminal
+ENTER
+DELAY 1000
+
+REM Create a backup of the current key mapping
+STRING mkdir -p ~/Library/KeyBindings
+ENTER
+DELAY 500
+STRING cp ~/Library/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict.backup
+ENTER
+DELAY 500
+
+REM Create a new key mapping file
+STRING echo '"\;\" = \"\\U037E\";' > ~/Library/KeyBindings/DefaultKeyBinding.dict
+ENTER
+DELAY 500
+
+REM Apply the changes (logout and login or restart required)
+STRING killall Finder
+ENTER
+DELAY 500
+
+REM Close Terminal
+COMMAND q
+

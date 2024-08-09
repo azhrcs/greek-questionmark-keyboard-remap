@@ -1,0 +1,22 @@
+DELAY 5000
+REM Open a terminal
+CTRL ALT t
+DELAY 1000
+
+REM Create a backup of the current .Xmodmap file
+STRING cp ~/.Xmodmap ~/.Xmodmap.backup
+ENTER
+DELAY 500
+
+REM Append the key remapping to the .Xmodmap file
+STRING echo "keycode 47 = Greek_question" >> ~/.Xmodmap
+ENTER
+DELAY 500
+
+REM Apply the new key mapping
+STRING xmodmap ~/.Xmodmap
+ENTER
+DELAY 500
+
+REM Close the terminal
+CTRL SHIFT q
