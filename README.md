@@ -1,5 +1,5 @@
-# greek-questionmark-keyboard-remap
-A collection of pranks involving remapping someones keyboard so that the semicolon key( ; ) types out the greek question mark( ; ) instead.
+# Rubber ducky keyboard remap pranks
+A collection of pranks involving remapping someones keyboard to completetly brick any desired aspect of computing.
 ## Permissions required
 ### Windows Registry editor
 - Administrative Privileges: need the ability to run regedit with elevated permissions.
